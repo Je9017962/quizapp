@@ -1,0 +1,126 @@
+.app {
+  font-family: 'Times New Roman', Times, serif;
+  text-align: center;
+  margin-top: 50px;
+}
+
+.question-section {
+  margin-bottom: 20px;
+  font-weight: bold;
+}
+
+.question-count {
+  margin-bottom: 10px;
+  font-weight: bold;
+}
+
+.question-text {
+  font-size: 24px;
+}
+
+/* FIX 4: Style for multiple-answer hint */
+.multi-answer-hint {
+  font-size: 14px;
+  color: #FFD700;
+  margin-top: 8px;
+  font-style: italic;
+  font-weight: normal;
+}
+
+.answer-section button {
+  display: block;
+  margin: 10px auto;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  background-color: black;
+  color: white;
+}
+
+.score-section {
+  font-size: 24px;
+  font-weight: bold;
+}
+
+body {
+  background-color: rgb(236, 220, 128);
+  padding: 20px;
+  border-radius: 10px;
+}
+
+.answer-button {
+  background-color: #2c2c2c;
+  border: 1px solid #FFD700;
+  border-radius: 8px;
+  padding: 15px;
+  margin: 8px 0;
+  color: white;
+  width: 100%;
+  font-size: 20px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.answer-button:hover {
+  background-color: #3a3a3a;
+}
+
+.answer-button.selected {
+  background-color: #FFD700;
+  color: #121212;
+  font-weight: bold;
+}
+
+.controls {
+  margin-top: 20px;
+  text-align: right;
+}
+
+.next-btn,
+.submit-btn {
+  background-color: #FFD700;
+  color: #121212;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.next-btn:disabled,
+.submit-btn:disabled {
+  background-color: #888;
+  cursor: not-allowed;
+}
+
+.summary-section {
+  color: white;
+}
+
+.summary-question {
+  background-color: #1a1a1a;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+  border: 1px solid gold;
+}
+
+.summary-question ul {
+  list-style: none;
+  padding: 0;
+}
+
+.restart-btn {
+  margin-top: 20px;
+  padding: 10px 20px;
+  background-color: gold;
+  border: none;
+  font-weight: bold;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+/* FIX 6: Hover now actually changes the button color */
+.restart-btn:hover {
+  background-color: #ccaa00;
+}
