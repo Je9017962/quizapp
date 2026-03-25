@@ -52,7 +52,7 @@ const ucfQuestions = [
 
 // ─── Step 1: User Info Form ───────────────────────────────────────────────────
 function InfoStep({ onNext }) {
-  const [form, setForm] = useState({ name: '', email: '', studentId: '', major: '' });
+  const [form, setForm] = useState({ name: '', email: '', phone: '', major: '' });
   const [errors, setErrors] = useState({});
 
   const validate = () => {
@@ -60,7 +60,8 @@ function InfoStep({ onNext }) {
     if (!form.name.trim()) newErrors.name = 'Full name is required.';
     if (!form.email.trim() || !/\S+@\S+\.\S+/.test(form.email))
       newErrors.email = 'A valid email is required.';
-    if (!form.studentId.trim()) newErrors.studentId = 'Student ID is required.';
+    if (!form.phone.trim() || !/^\+?[\d\s\-().]{7,15}$/.test(form.phone))
+      newErrors.phone = 'A valid phone number is required.';
     if (!form.major.trim()) newErrors.major = 'Major is required.';
     return newErrors;
   };
@@ -111,15 +112,15 @@ function InfoStep({ onNext }) {
         </div>
 
         <div className="form-field">
-          <label>Student ID</label>
+          <label>Phone Number</label>
           <input
-            type="text"
-            placeholder="e.g. 5012345678"
-            value={form.studentId}
-            onChange={e => handleChange('studentId', e.target.value)}
-            className={errors.studentId ? 'input-error' : ''}
+            type="tel"
+            placeholder="e.g. (407) 555-1234"
+            value={form.phone}
+            onChange={e => handleChange('phone', e.target.value)}
+            className={errors.phone ? 'input-error' : ''}
           />
-          {errors.studentId && <span className="error-msg">{errors.studentId}</span>}
+          {errors.phone && <span className="error-msg">{errors.phone}</span>}
         </div>
 
         <div className="form-field">
