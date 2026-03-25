@@ -176,7 +176,6 @@ function QuizStep({ userInfo, onFinish }) {
     const correctIndices = ucfQuestions[currentQuestion].answerOptions
       .map((opt, idx) => (opt.isCorrect ? idx : null))
       .filter(idx => idx !== null);
-    const lastCorrect = correctIndices.includes(selectedAnswer) ? 1 : 0;
     const lastAnswer = {
       question: ucfQuestions[currentQuestion].questionText,
       options: ucfQuestions[currentQuestion].answerOptions,
